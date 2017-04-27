@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cc_number: 1
+  cvv_number: 1
+  validity: MyString
+
+two:
+  cc_number: 1
+  cvv_number: 1
+  validity: MyString

@@ -1,0 +1,16 @@
+Pay now
+
+<%= form_tag({controller: 'order', action: 'pay'}, method: :post) do |f| %>
+<div class="field">
+  <%= f.label :cc_number %><br>
+  <%= f.text_field :cc_number, maxlength: 20, :required => true %>
+</div>
+<div class="field">
+  <%= f.label :cc_cvc %><br>
+  <%= f.text_field :cc_cvc, maxlength: 20, :required => true %>
+</div>
+<div class="field">
+  <%= f.label :cc_exp_month %><br>
+  <%= f.text_field :cc_exp_month, maxlength: 20, :required => true %>
+</div>
+<% end %>

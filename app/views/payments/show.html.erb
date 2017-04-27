@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cc number:</strong>
+  <%= @payment.cc_number %>
+</p>
+
+<p>
+  <strong>Cvv number:</strong>
+  <%= @payment.cvv_number %>
+</p>
+
+<p>
+  <strong>Validity:</strong>
+  <%= @payment.validity %>
+</p>
+
+<%= link_to 'Shop More', products_path %>

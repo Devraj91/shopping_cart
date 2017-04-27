@@ -1,0 +1,33 @@
+
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
+
+<%= form_tag '/login' do %>
+  <div class="login-form">
+     <h1>Virtual Store</h1>
+     <div class="form-group ">
+       <%=text_field_tag :email,'' ,class: 'form-control', placeholder: 'Username' , id: 'UserName', :required => true%>
+        <!-- <input type="text" class="form-control" placeholder="Username " id="UserName"> -->
+       <i class="fa fa-user"></i>
+     </div>
+     <div class="form-group log-status">
+        <%=password_field_tag :password,'', class: 'form-control', placeholder: "Password", id: 'Password', :required => true %>
+        <!-- <input type="password" class="form-control" placeholder="Password" id="Passwod"> -->
+       <i class="fa fa-lock"></i>
+     </div>
+      <!-- <span class="alert">Invalid Credentials</span> -->
+      <!-- <a class="link" href="#">Lost your password?</a> -->
+      <%= submit_tag "Login", data: { disable_with: "Please wait.." }, class: "log-btn" %>
+
+
+
+   </div>
+<% end %>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+<% content_for :javascript do %>
+    <%= javascript_include_tag 'index.js' %>
+<% end %>
+<% content_for :header do -%>
+  <%= stylesheet_link_tag 'style' %>
+<% end -%>
