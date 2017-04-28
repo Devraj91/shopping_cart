@@ -1,3 +1,4 @@
+<div class="form-style-6">
 <%= form_for(@payment) do |f| %>
   <% if @payment.errors.any? %>
     <div id="error_explanation">
@@ -11,23 +12,22 @@
     </div>
   <% end %>
   <%#= f.hidden_field :order_id, @order.id%>
-
   <input type="hidden" name="order_id" value=<%= @order.id%> />
-
-
   <div class="field">
     <%= f.label :cc_number %><br>
-    <%= f.text_field :cc_number %>
+    <%= f.text_field :cc_number, :required => true, :placeholder=>"Credit Card Number" %>
   </div>
   <div class="field">
     <%= f.label :cvv_number %><br>
-    <%= f.text_field :cvv_number %>
+    <%= f.text_field :cvv_number , :required => true, :placeholder=>"CVV Number"%>
   </div>
   <div class="field">
     <%= f.label :validity %><br>
-    <%= f.text_field :validity %>
+    <%= f.text_field :validity , :required => true, :placeholder=>"Card Validity"%>
   </div>
   <div class="actions">
     <%= f.submit %>
+    <%= link_to 'Cancel', products_path%>
   </div>
 <% end %>
+</div>

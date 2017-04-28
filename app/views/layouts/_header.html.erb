@@ -1,8 +1,6 @@
 <!-- Navigation -->
  <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
-          <span class="navbar-toggler-icon"></span>
-     </button>
-     <div class="container">
+        <div class="container">
          <a class="navbar-brand" href="#">Shopping</a>
          <div class="collapse navbar-collapse" id="navbarExample">
              <ul class=" nav navbar-nav ml-auto">
@@ -10,17 +8,16 @@
                      <a class="nav-link" href="/products">Home <span class="sr-only">(current)</span></a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="#">About</a>
-                 </li>
-                 <li class="nav-item">
                      <a class="nav-link" href="#"></a>
                  </li>
-                 <li class="nav-item">
-                     <a class="nav-link" href="/orders">My Orders</a>
-                 </li>
-                 <li class="nav-item">
-                      <%= link_to('Logout', logout_path, :method => :delete) %>
-                 </li>
+             </ul>
+             <ul  class=" nav navbar-nav navbar-right">
+               <li class="nav-item">
+                   <a class="nav-link" href="/orders">My Orders</a>
+               </li>
+               <li class="nav-item">
+                    <%= link_to('Logout', logout_path, :method => :delete) %>
+               </li>
              </ul>
 
 

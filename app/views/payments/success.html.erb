@@ -1,15 +1,47 @@
-Your order is placed successfully
+<form class="form-horizontal">
+<div class="form-group">
+<p class="form-control-static">Your order is placed successfully</p>
+<p class="form-control-static">Shipment Details</p>
+<label for="inputEmail" class="control-label col-xs-2">Name</label>
+<p class="form-control-static"> <%= @order.name %></p>
+<label for="inputEmail" class="control-label col-xs-2">Address</label>
+<p class="form-control-static">
+  <%= @order.address %>
+</p>
+<label for="inputEmail" class="control-label col-xs-2">Email</label>
+<p class="form-control-static">
+  <%= @order.email %>
+</p >
+<label for="inputEmail" class="control-label col-xs-2">Payment Mode</label>
+<p class="form-control-static">
+  <%= @order.pay_type %>
+</p>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>description</th>
+            <th>price</th>
+          </tr>
+          </thead>
+          <tbody>
+        <% @items.each_with_index do |i , index|%>
+              <tr>
+                <td><%=image_tag i.product.image.url(:thumb)%></td>
+                <td><%=  i.product.title%></td>
+                <td><%=i.product.description%></td>
+                <td><%= number_to_currency(i.product.price)%></td>
 
-<% @items.each_with_index do |i , index|%>
-  <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card h-100">
-            <%= image_tag i.product.image.url(:medium), :class=>"card-img-top img-fluid"%>
-          <div class="card-block">
-              <h4 class="card-title"><p ><%= i.product.title%></p></h4>
-              <h5><%=number_to_currency(i.product.price) %> </h5>
-              <p class="card-text"><%= i.product.description%>  </p>
-          </div>
-
-      </div>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+       </div>
+    </div>
   </div>
-  <%end%>
+</form>
